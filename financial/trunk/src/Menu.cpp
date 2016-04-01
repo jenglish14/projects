@@ -20,5 +20,6 @@ void Menu::run()
 	cout << "This program was written in 2016 as an attempt to track stock prices and" << endl;
 	cout << "trends to evaluate market movements. Data is fetched from fidelity.com; and, ownership of this data is not claimed by us. Any investment in the stock market involves risk. Use this tool at your own risk. We do not" << endl;
 	cout << "claim responsibility for lost assets.\n" << endl;
+	
 };
 

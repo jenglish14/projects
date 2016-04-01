@@ -1,7 +1,7 @@
 /* @author: Josh English
  * 
  * @created: Mar. 30 2016
- * @modified: Mar. 30 2016
+ * @modified: Mar. 31 2016
  *
  * @summary: header of StockList Class holding common list of tracked stocks
 */
@@ -19,6 +19,7 @@ public:
 	bool checkYesNo(std::string response);
 	void store500();
 	void makeAndPushStock(std::string stockSymbol);
+	void addStock();
 
 private:
 	std::vector<Stock> m_stockList;

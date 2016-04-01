@@ -1,7 +1,7 @@
 /* @author: Josh English
  * 
  * @created: Mar. 30 2016
- * @modified: Mar. 30 2016
+ * @modified: Mar. 31 2016
  *
  * @summary: implementation of StockList Class holding common list of tracked
  *           stocks
@@ -31,7 +31,8 @@ void StockList::init()
 	{
 		store500();
 	}
-	//code add custom stock functionality here
+	addStock();
+	cout << "You are tracking: " << m_stockList.size() << " stock(s)" << endl;
 	return;
 }
 
@@ -366,7 +367,6 @@ void StockList::store500()
 	makeAndPushStock("MYL");
 	makeAndPushStock("NAVI");
 	makeAndPushStock("NBL");
-	makeAndPushStock("NDAQ");
 	makeAndPushStock("NEE");
 	makeAndPushStock("NEM");
 	makeAndPushStock("NFLX");
@@ -555,5 +555,28 @@ void StockList::makeAndPushStock(string stockSymbol)
 {
 	Stock temp(stockSymbol);
 	m_stockList.push_back(temp);
+	return;
+}
+
+void StockList::addStock()
+{
+	bool validInput = 0;
+	string response;
+	while (!validInput)
+	{
+		cout << "Would you like to track an additional stock?" << endl;
+		cout << "(y/n)?: ";
+		cin >> response;
+		validInput = checkYesNo(response);
+	}
+	if (response[0] == 'Y' || response[0] == 'y')
+	{
+		string symbol;
+		cout << "Please enter symbol, all caps: ";
+		cin >> symbol;
+		cout << endl;
+		makeAndPushStock(symbol);
+		addStock();
+	}
 	return;
 }

@@ -11,12 +11,13 @@
 #include <string>
 #include "Stock.h"
 #include "StockList.h"
+#include "Menu.h"
 
 using namespace std;
 
 int main()
 {
-	StockList b;
-	b.init();
+	Menu userIO;
+	userIO.run();
 	return 0;
 }
